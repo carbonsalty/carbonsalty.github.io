@@ -2,7 +2,7 @@ const num_day=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 function makeXAxis() {
     const axis = [];
     for (let i = 1; i <= 12; i++) {
-      for (let j = 1; j <= num_day[i]; j++) {
+      for (let j = 1; j <= num_day[i-1]; j++) {
         const str =i+ "月" + j+"号";
         axis.push(str);
       }
@@ -114,14 +114,14 @@ function makeXAxis() {
       {
         type: "inside",
         filterMode: "weakFilter",
-        minValueSpan: 20,
+        minValueSpan: 8,
       },
       {
         type: "slider",
         show: true,
         filterMode: "weakFilter",
         backgroundColor: "#fafafa",
-        minValueSpan: 20,
+        minValueSpan: 8,
       },
     ],
   };
