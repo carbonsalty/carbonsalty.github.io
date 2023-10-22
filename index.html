@@ -13,12 +13,14 @@
     <!-- <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"> -->
 
     <style>
-        p {
-            text-align: right;
-            margin-top: 0.5em;
-            padding: 20px;
-            color: rgb(40, 40, 42);
-        }
+     body{
+        background-color: rgb(40,40,42);
+     }
+     a:link {
+        color: green;
+        background-color: rgb(80,80,82);
+        text-decoration: none;
+      }
         
     </style>
 <!-- 导入js包 -->
@@ -43,22 +45,22 @@
 <!-- 组件 -->
 <!-- 标题 -->
 <div>
-    <nav class="navbar navbar-light" style="background-color: #424244; height: 50px;">
+    <nav class="navbar navbar-light" style="background-color: rgb(40,40,42);">
         <strong><h1 style="background-color: transparent; font-family: 'Times New Roman'; color: #fdfdfe;text-align:center">桥安科技团队近期事务</h1></strong>
     </nav>
 </div>
 
 
 <!--Visual Container-->
-<div class="row" style="height: 100px;background-color:#000000">
+<div class="row" style="background-color:rgb(40,40,42);">
     <div id="year_select" class="btn-group btn-group-lg" role="group"style="text-align: center;">
         <h1 id="year_show" style="font-family: Georgia; text-align: center;color: #ffffff; font-size: 33px;">In 2023...</h1>
-        <button id="button2023" type="button" class="btn btn-outline-info">2023</button>
-        <button id="button2024" type="button" class="btn btn-outline-info">2024</button>
+        <button id="button2023" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2023</button>
+        <button id="button2024" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2024</button>
     </div>
 </div>
 
-<div id="mapaddr" class="row" style="height: 501px;">
+<div id="mapaddr" class="row" style="text-align:center">
     <!--task -->
     <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;">
         Map
@@ -91,7 +93,7 @@
             var str = '#button' + txt;
             
             for (let i = 0; i < 2; i++) {
-                $('#button'+(2023+i).toString()).css('background-color', 'rgb(40,40,42)');               
+                $('#button'+(2023+i).toString()).css('background-color', 'rgb(129, 129, 157)');               
             }
             $(str).css('background-color', 'rgb(56,111,219)');  // 选中按钮后的背景颜色
 
