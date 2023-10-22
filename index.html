@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"> -->
 
     <style>
         p {
@@ -40,66 +40,28 @@
 <!-- 标题 -->
 <div>
     <nav class="navbar navbar-light" style="background-color: #424244; height: 50px;">
-        <strong><h1 style="background-color: transparent; font-family: 'Times New Roman'; color: #fdfdfe;">桥安科技团队近期事务</h1></strong>
+        <strong><h1 style="background-color: transparent; font-family: 'Times New Roman'; color: #fdfdfe;text-align:center">桥安科技团队近期事务</h1></strong>
     </nav>
 </div>
 
 
 <!--Visual Container-->
-<div class="container-fluid" style="background-color: rgb(40,40,42); height: 850px;">
-    <div class="container-fluid">
-        <div class="row" style="height: 820px;">
+<div class="row" style="height: 100px;background-color:#000000">
+    <div id="year_select" class="btn-group btn-group-lg" role="group"style="text-align: center;">
+        <h1 id="year_show" style="font-family: Georgia; text-align: center;color: #ffffff; font-size: 33px;">In 2023...</h1>
+        <button id="button2023" type="button" class="btn btn-outline-info">2023</button>
+        <button id="button2024" type="button" class="btn btn-outline-info">2024</button>
+    </div>
+</div>
 
-            <div class="col-6" style="background-color: rgb(40,40,42); border: solid; border-color: rgb(40,40,42);">
-
-                <div class="row" style="height: 100px;">
-                    <div class="col-4" style="background-color: rgb(40,40,42); border: none; margin: auto;">
-                        <h1 id="year_show" style="font-family: Georgia; text-align: center;
-						color: #fdfdfe; font-size: 33px;">In 2023...<span class="caret1"></span></h1>
-                    </div>
-                    <div class="col-8" style="background-color: rgb(40,40,42); border: none;">
-                        <div class="row" style="height: 33px;"></div>
-
-                        <div class="row" style="height: 33px;">
-
-                            <div class="col-lg">
-                                <div id="year_select" class="btn-group btn-group-lg" role="group"
-                                     style="text-align: center;">
-                               
-                                    <button id="button2023" type="button" class="btn btn-outline-info">2023</button>
-                                    <button id="button2024" type="button" class="btn btn-outline-info">2024</button>
-                                </div>
-                            </div>
-
-                            <div class="col-4"></div>
-                        </div>
-
-           
-
-                    </div>
-                </div>
-
-                <div id="mapaddr" class="row" style="height: 501px;">
-                    <!--task -->
-                    <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;">
-                        Map
-                    </div>
-                </div>
-
-           
-            </div>
-
-
-      
-
-        </div>
+<div id="mapaddr" class="row" style="height: 501px;">
+    <!--task -->
+    <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;">
+        Map
     </div>
 </div>
 
 
-<!-- ---------footer container---------------- -->
-<div class="container-fluid bg" style="background-color: #414143; height: 30px;">
-</div>
 
 
 
