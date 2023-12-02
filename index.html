@@ -13,12 +13,36 @@
     <!-- <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"> -->
 
     <style>
-     body{
+     /* body{
         background-color: rgb(40,40,42);
-     }
+     } */
+             /* 默认样式 */
+             body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+
+        }
+
+        /* 当屏幕宽度小于等于768px时，应用以下样式 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            table {
+            text-align: center;
+        }   
+        }
      a:link {
         color: green;
-        background-color: rgb(80,80,82);
+        background-color: rgb(202, 202, 204);
         text-decoration: none;
       }
         
@@ -42,6 +66,8 @@
    
 </head>
 <body>
+    <!-- <tr><td>日常事务</td></tr> -->
+    <!-- 请在这里加入一表格，根据ppt的数据 -->
 <!-- 组件 -->
 <!-- 标题 -->
 <div>
@@ -67,7 +93,6 @@
     </div>
 </div>
 <!-- fjdkfjkdsfj -->
-
 
 <script>
     $(document).ready(function () {//控制组件
@@ -107,6 +132,50 @@
     });
     
 </script>
+<div class="container">
+    <table border="1" style="background-color: rgb(162, 162, 230); width: 100%;">
+        <caption>近期事务</caption>
+        <tbody border="2" cellpadding="15" cellspacing="10">
+         
+            <tr>
+                <th>网站搭建与维护</th>
+                <td>曹晨曦<br>何常榕<br>岑興昇</td>
+            </tr>
+
+        
+            <tr>
+                <th>裂缝探测算法开发</th>
+                <td>曹晨曦、马哲超、钟如昕</td>
+            </tr>
+
+ 
+            <tr>
+                <th>三维重建算法开发</th>
+                <td>曹晨曦、马哲超</td>
+            </tr>
+
+  
+            <tr>
+                <th>负压式无人机</th>
+                <td>刘亦凡、艾海楠、戴勇波</td>
+            </tr>
+
+
+            <tr>
+                <th>水下无人机</th>
+                <td>刘亦凡、艾海楠、戴勇波</td>
+            </tr>
+
+
+            <tr>
+                <th>产品组</th>
+                <td>汪心梵、谭诗怡</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 
 </body>
 </html>
