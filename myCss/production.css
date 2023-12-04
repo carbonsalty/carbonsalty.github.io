@@ -1,0 +1,25 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(147, 147, 181);
+    color: #ffffff;
+}
+
+h1 {
+    color: #2d2d2d;
+}
+
+h2 {
+    color: #1d1c1c;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+p {
+    color: #343333;
+    margin-bottom: 10px;
+}

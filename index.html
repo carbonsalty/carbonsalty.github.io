@@ -3,6 +3,7 @@
 
 <head>
     <title>桥安科技团队近期事务</title>
+    <!-- 导航栏链接 -->
     <td width="100" align="center"><a href="index.html">主页 </a></td> 
     <td width="100" align="center"><a href="Software.html">软件组 </a></td>
     <td width="100" align="center"><a href="hardware.html">硬件组</a></td> 
@@ -10,17 +11,14 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <!-- <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"> -->
-
     <style>
-     /* body{
-        background-color: rgb(40,40,42);
-     } */
-             /* 默认样式 */
-             body {
+        /* 默认样式 */
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: rgb(40, 40, 42);
+            color: #ffffff;
         }
 
         .container {
@@ -28,7 +26,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-
         }
 
         /* 当屏幕宽度小于等于768px时，应用以下样式 */
@@ -37,145 +34,133 @@
                 padding: 10px;
             }
             table {
-            text-align: center;
-        }   
+                text-align: center;
+            }
         }
-     a:link {
-        color: green;
-        background-color: rgb(202, 202, 204);
-        text-decoration: none;
-      }
-        
-    </style>
-<!-- 导入js包 -->
 
+        a:link {
+            color: green;
+            background-color: rgb(202, 202, 204);
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- 导入 JavaScript 包 -->
     <script src="https://cdn.bootcss.com/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="static/jquery/jquery-3.5.1.js"></script>
     <script src="static/jquery/jquery.min.js"></script>
     <script src="static/bootstrap/js/bootstrap.min.js"></script>
 
-
-    
-    <!-- new -->
+    <!-- ECharts 和自定义脚本 -->
     <script type="text/javascript" src="echarts.min.js"></script>
     <script src="taskmap.js"></script>
+
     <!-- 数据 -->
     <script src="data/2023.js"></script>
     <script src="data/2024.js"></script>
-    <!-- 三个页面的主要组成部分 -->
-   
 </head>
+
 <body>
-    <!-- <tr><td>日常事务</td></tr> -->
-    <!-- 请在这里加入一表格，根据ppt的数据 -->
-<!-- 组件 -->
-<!-- 标题 -->
-<div>
-    <nav class="navbar navbar-light" style="background-color: rgb(40,40,42);">
-        <strong><h1 style="background-color: transparent; font-family: 'Times New Roman'; color: #fdfdfe;text-align:center">桥安科技团队近期事务</h1></strong>
-    </nav>
-</div>
-
-
-<!--Visual Container-->
-<div class="row" style="background-color:rgb(40,40,42);">
-    <div id="year_select" class="btn-group btn-group-lg" role="group"style="text-align: center;">
-        <h1 id="year_show" style="font-family: Georgia; text-align: center;color: #ffffff; font-size: 33px;">In 2023...</h1>
-        <button id="button2023" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2023</button>
-        <button id="button2024" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2024</button>
+    <!-- 导航栏 -->
+    <div>
+        <nav class="navbar navbar-light" style="background-color: rgb(40, 40, 42);">
+            <strong>
+                <h1 style="background-color: transparent; font-family: 'Times New Roman'; color: #fdfdfe; text-align:center">桥安科技团队近期事务</h1>
+            </strong>
+        </nav>
     </div>
-</div>
 
-<div id="mapaddr" class="row" style="text-align:center">
-    <!--task -->
-    <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;">
-        Map
+    <!-- Visual Container -->
+    <div class="row" style="background-color:rgb(40,40,42);">
+        <!-- 年份选择按钮 -->
+        <div id="year_select" class="btn-group btn-group-lg" role="group" style="text-align: center;">
+            <h1 id="year_show" style="font-family: Georgia; text-align: center; color: #ffffff; font-size: 33px;">In 2023...</h1>
+            <button id="button2023" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2023</button>
+            <button id="button2024" type="button" class="btn btn-outline-info" style="color:#ffffff; background-color:rgb(129, 129, 157);">2024</button>
+        </div>
     </div>
-</div>
-<!-- fjdkfjkdsfj -->
 
-<script>
-    $(document).ready(function () {//控制组件
-        //data
-        var wholedata = [data2023,data2024];
-        var yeartext = ["2023", "2024"];
-        //draw task
-        taskchart = echarts.init(document.getElementById("task"));
-        taskchart.setOption(getOption(wholedata[0]), true);//默认是2023年的数据
+    <div id="mapaddr" class="row" style="text-align:center">
+        <!-- 任务地图容器 -->
+        <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;">
+            Map
+        </div>
+    </div>
 
-        $("#button2023").css('background-color', 'rgb(56,111,219)');  // 选中按钮后的背景颜色
-        $('#year_select button').on('click', function () {
-            var txt = ($(this).text());
-            var text = 'In ' + txt + '...';
-            $("h1#year_show").html(text + ' <span class="caret1"></span>');
+    <script>
+        $(document).ready(function () {
+            // 控制组件
+            // data
+            var wholedata = [data2023, data2024];
+            var yeartext = ["2023", "2024"];
 
-            const year_index = yeartext.indexOf(txt);//获取对应的年份
-            var data = wholedata[year_index];//获取对应年份的数据。
-            console.log(year_index+"??????????");
-
-            var str = '#button' + txt;
-            
-            for (let i = 0; i < 2; i++) {
-                $('#button'+(2023+i).toString()).css('background-color', 'rgb(129, 129, 157)');               
-            }
-            $(str).css('background-color', 'rgb(56,111,219)');  // 选中按钮后的背景颜色
-
-            //重画中间的地图
-            $("div#task").remove();
-            $("div#mapaddr").append(' <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;"><div>');
+            // 绘制任务地图
             taskchart = echarts.init(document.getElementById("task"));
-            taskchart.setOption(getOption(data), true);
+            taskchart.setOption(getOption(wholedata[0]), true);
 
-           
+            $("#button2023").css('background-color', 'rgb(56,111,219)');  // 选中按钮后的背景颜色
+            $('#year_select button').on('click', function () {
+                var txt = ($(this).text());
+                var text = 'In ' + txt + '...';
+                $("h1#year_show").html(text + ' <span class="caret1"></span>');
+
+                const year_index = yeartext.indexOf(txt);
+                var data = wholedata[year_index];
+
+                var str = '#button' + txt;
+
+                for (let i = 0; i < 2; i++) {
+                    $('#button' + (2023 + i).toString()).css('background-color', 'rgb(129, 129, 157)');
+                }
+                $(str).css('background-color', 'rgb(56,111,219)');  // 选中按钮后的背景颜色
+
+                // 重画中间的地图
+                $("div#task").remove();
+                $("div#mapaddr").append(' <div id="task" class="col" style="background-color: rgb(40,40,42); border: none; height: 501px;"><div>');
+                taskchart = echarts.init(document.getElementById("task"));
+                taskchart.setOption(getOption(data), true);
+            });
         });
+    </script>
 
-    });
-    
-</script>
-<div class="container">
-    <table border="1" style="background-color: rgb(162, 162, 230); width: 100%;">
-        <caption>近期事务</caption>
-        <tbody border="2" cellpadding="15" cellspacing="10">
-         
-            <tr>
-                <th>网站搭建与维护</th>
-                <td>曹晨曦<br>何常榕<br>岑興昇</td>
-            </tr>
+    <!-- 近期事务表格 -->
+    <div class="container">
+        <table border="1" style="background-color: rgb(162, 162, 230); width: 100%;">
+            <caption>近期事务</caption>
+            <tbody border="2" cellpadding="15" cellspacing="10">
+                <tr>
+                    <th>网站搭建与维护</th>
+                    <td>曹晨曦<br>何常榕、岑興昇</td>
+                </tr>
 
-        
-            <tr>
-                <th>裂缝探测算法开发</th>
-                <td>曹晨曦、马哲超、钟如昕</td>
-            </tr>
+                <tr>
+                    <th>裂缝探测算法开发</th>
+                    <td>曹晨曦、马哲超、钟如昕</td>
+                </tr>
 
- 
-            <tr>
-                <th>三维重建算法开发</th>
-                <td>曹晨曦、马哲超</td>
-            </tr>
+                <tr>
+                    <th>三维重建算法开发</th>
+                    <td>曹晨曦、马哲超</td>
+                </tr>
 
-  
-            <tr>
-                <th>负压式无人机</th>
-                <td>刘亦凡、艾海楠、戴勇波</td>
-            </tr>
+                <tr>
+                    <th>负压式无人机</th>
+                    <td>刘亦凡、艾海楠、戴勇波</td>
+                </tr>
 
+                <tr>
+                    <th>水下无人机</th>
+                    <td>刘亦凡、艾海楠、戴勇波</td>
+                </tr>
 
-            <tr>
-                <th>水下无人机</th>
-                <td>刘亦凡、艾海楠、戴勇波</td>
-            </tr>
-
-
-            <tr>
-                <th>产品组</th>
-                <td>汪心梵、谭诗怡</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<!-- hello -->
-
+                <tr>
+                    <th>产品组</th>
+                    <td>汪心梵、谭诗怡</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
+
 </html>
